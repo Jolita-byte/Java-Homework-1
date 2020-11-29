@@ -2,12 +2,14 @@ package Cooking;
 
 public class CookingMeasurementConverter {
 
-    public static CookingMeasurement convert(CookingMeasurement originalMeasurement, String unit){
+    public static CookingMeasurement convert(CookingMeasurement originalMeasurement, Unit unit){
         return new CookingMeasurement(originalMeasurement.getAmount() * ratio(originalMeasurement.getUnit(),unit), unit);
     }
 
-    private static float ratio(String fromUnit, String toUnit){
-        float fromUnitAmount = 0;
+    private static float ratio(Unit fromUnit, Unit toUnit){
+        return fromUnit.getMl()/ toUnit.getMl();
+
+/*        float fromUnitAmount = 0;
         float toUnitAmount = 0;
         for (int i = 0; i < Cooking.Units.getValues().length; i++){
             if (Cooking.Units.getValues()[i].equals(fromUnit)){
@@ -17,6 +19,6 @@ public class CookingMeasurementConverter {
                 toUnitAmount = Cooking.Amounts.getValues()[i];
             }
         }
-        return fromUnitAmount/toUnitAmount;
+        return fromUnitAmount/toUnitAmount;*/
     }
 }

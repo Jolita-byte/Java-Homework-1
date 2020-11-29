@@ -1,4 +1,5 @@
-package Cooking;
+/*
+package x;
 
 public class Cooking {
 
@@ -41,3 +42,4 @@ public class Cooking {
         }
     }
 }
+*/

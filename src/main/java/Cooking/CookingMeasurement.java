@@ -2,18 +2,18 @@ package Cooking;
 
 public class CookingMeasurement {
     private float amount;
-    private String unit;
+    private Unit unit;
 
-    public CookingMeasurement(float amount, String unit) {
+    public CookingMeasurement(float amount, Unit unit) {
         this.amount = amount;
-        this.unit = unit.toUpperCase();
+        this.unit = unit;
     }
 
     public float getAmount() {
         return amount;
     }
 
-    public String getUnit() {
+    public Unit getUnit() {
         return unit;
     }
 }
