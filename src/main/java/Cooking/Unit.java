@@ -6,7 +6,7 @@ public enum Unit {
     TBSP(15, "TBSP"),
     FL_OUNCE(30, "FL_OUNCE"),
     CUP(237, "CUP"),
-    PINT(473, "PINT"),
+    PINT(474, "PINT"),
     QUART(948, "QUART"),
     GALLON(3792, "GALLON");
 
@@ -15,7 +15,7 @@ public enum Unit {
 
     Unit(float ml, String description) {
         this.ml = ml;
-        this.description = description;
+        this.description = description.toUpperCase();
     }
 
     public float getMl() {
@@ -26,7 +26,7 @@ public enum Unit {
         return description;
     }
 
-    public boolean unitExists(String unit){
+    public static boolean unitExists(String unit){
         unit = unit.toUpperCase();
         for (Unit u : Unit.values()) {
             if (u.getDescription().equals(unit)){

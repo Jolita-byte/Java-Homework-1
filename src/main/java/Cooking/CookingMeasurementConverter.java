@@ -2,23 +2,11 @@ package Cooking;
 
 public class CookingMeasurementConverter {
 
-    public static CookingMeasurement convert(CookingMeasurement originalMeasurement, Unit unit){
-        return new CookingMeasurement(originalMeasurement.getAmount() * ratio(originalMeasurement.getUnit(),unit), unit);
+    public static CookingMeasurement convert(CookingMeasurement originalMeasurement, Unit toUnit){
+        return new CookingMeasurement(originalMeasurement.getAmount() * ratio(originalMeasurement.getUnit(),toUnit), toUnit);
     }
 
     private static float ratio(Unit fromUnit, Unit toUnit){
         return fromUnit.getMl()/ toUnit.getMl();
-
-/*        float fromUnitAmount = 0;
-        float toUnitAmount = 0;
-        for (int i = 0; i < Cooking.Units.getValues().length; i++){
-            if (Cooking.Units.getValues()[i].equals(fromUnit)){
-                fromUnitAmount = Cooking.Amounts.getValues()[i];
-            }
-            if (Cooking.Units.getValues()[i].equals(toUnit)){
-                toUnitAmount = Cooking.Amounts.getValues()[i];
-            }
-        }
-        return fromUnitAmount/toUnitAmount;*/
     }
 }
